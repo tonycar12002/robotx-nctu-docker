@@ -30,7 +30,6 @@ $ cd git clone https://github.com/RobotX-NCTU/robotx_nctu.git
 2. Run the docker
 ```
 $ xhost +local:root
-$ ervice nvidia-docker start
 $ nvidia-docker run -it --rm -v /home/[your username]:/hostname --env="DISPLAY" --name=robotx-nctu --env="QT_X11_NO_MITSHM=1" --network host --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" --privileged robotx-nctu
 ```
 
@@ -44,6 +43,7 @@ container# ./build.sh
 ```
 
 ## Test the code
+We already tested using two laptops with same docker file. One container open ZED and another open rviz.
 1. Test ZED sensors in docker
 
 ```
