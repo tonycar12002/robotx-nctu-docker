@@ -30,20 +30,22 @@ $ cd git clone https://github.com/RobotX-NCTU/robotx_nctu.git
 2. Run the docker
 ```
 $ xhost +local:root
-$ sudo service nvidia-docker start
-$ sudo nvidia-docker run -it --rm -v /home/[your username]:/hostname --env="DISPLAY" --name=robotx-nctu --env="QT_X11_NO_MITSHM=1" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" --privileged robotx-nctu
+$ ervice nvidia-docker start
+$ nvidia-docker run -it --rm -v /home/[your username]:/hostname --env="DISPLAY" --name=robotx-nctu --env="QT_X11_NO_MITSHM=1" --network host --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" --privileged robotx-nctu
 ```
 
-3. Build the repo
+3. Build the ros and moos workspace
 ```
 container# cd /hostname/robotx_nctu/catkin_ws
 container# catkin_make --pkg --robotx_msgs
 container# catkin_make
+container# cd /hostname/robotx_nctu/moos
+container# ./build.sh
 ```
 
 ## Test the code
-1. Test ZED sensors
-This [website](https://stackoverflow.com/questions/24225647/docker-a-way-to-give-access-to-a-host-usb-or-serial-device) teaches how to access to a host usb device. ZED is --device=/dev/video0
+1. Test ZED sensors in docker
+
 ```
 container# byobu
 (first page)
