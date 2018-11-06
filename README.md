@@ -31,6 +31,8 @@ $ cd git clone https://github.com/RobotX-NCTU/robotx_nctu.git
 ```
 $ xhost +local:root
 $ nvidia-docker run -it --rm -v /home/[your username]:/hostname --env="DISPLAY" --name=robotx-nctu --env="QT_X11_NO_MITSHM=1" --network host --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" --privileged robotx-nctu
+or 
+$ nvidia-docker run -it --rm -v /home/[your username]:/hostname --env="DISPLAY" --name=robotx-nctu --env="QT_X11_NO_MITSHM=1" --network host --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" --privileged tonycar12002/robotx-nctu
 ```
 
 3. Build the ros and moos workspace
