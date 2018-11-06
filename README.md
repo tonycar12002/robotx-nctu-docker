@@ -61,7 +61,9 @@ container# rviz
 2. Open gazebo
 
 ```
-container# cd /root/robotx_gazebo
+container# cd /root/robotx_gazebo/catkin_ws
+container# catkin_make
+container# cd ../
 container# source environment.sh
 container# roslaunch robotx_gazebo sandisland_nctu.launch
 ```
