@@ -58,6 +58,13 @@ container# roslaunch zed_wrapper zed.launch
 container# rviz
 ```
 
+2. Open gazebo
+
+```
+container# cd /root/robotx_gazebo
+container# source environment.sh
+container# roslaunch robotx_gazebo sandisland_nctu.launch
+```
 
 ## Still Working On
 This is the beta version of our docker file. We found that "nsplug" will cause some fatal errors, we are still fixing the problems. 

@@ -55,7 +55,8 @@ RUN apt-get update > /dev/null && apt-get install -y ros-kinetic-geographic-msgs
 #	cd robotx_nctu/catkin_ws && catkin_make --pkg robotx_msgs && catkin_make && \
 #	cd ../moos/ && ./build.sh"
 
-RUN apt-get update > /dev/null && apt-get install -y net-tools network-manager > /dev/null
+RUN apt-get update > /dev/null && apt-get install -y net-tools network-manager && apt-get install ros-kinetic-teleop-twist-keyboard
+ > /dev/null
 
 ENV PATH="/root/robotx_nctu/moos/bin:${PATH}"
 
